@@ -539,7 +539,7 @@ CopyFileSystem() {
 
 	#Copy the filesystem to $DEST
 	#Note: Always skips /home
-	sudo rsync -aAXSH -hv --delete --progress / ${DEST} --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/home/*","/etc/mtab","/live","/Original_OS","/RAM_Session","/var/cache/apt/archives/*.deb","${DEST}","${LOG}",/lost+found}
+	sudo rsync -aAXSH -hv --delete --progress / ${DEST} --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/home/*","/etc/mtab","/live","/Original_OS","/RAM_Session","/var/cache/apt/archives/*.deb","/var/lib/docker","/var/virtual","${DEST}","${LOG}",/lost+found}
 
 	#Check how the operation went
 	#Exit code 24 indicates some source files vanished, which is pretty
